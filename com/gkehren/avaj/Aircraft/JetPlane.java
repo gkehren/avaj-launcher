@@ -1,4 +1,7 @@
-package com.gkehren.avaj.Aircraft;
+package com.gkehren.avaj;
+
+import com.gkehren.avaj.WeatherTower;
+import com.gkehren.avaj.Coordinates;
 
 public class JetPlane extends Aircraft implements Flyable {
 
@@ -17,5 +20,6 @@ public class JetPlane extends Aircraft implements Flyable {
 	public void registerTower(WeatherTower weatherTower) {
 		this.weatherTower = weatherTower;
 		this.weatherTower.register(this);
+		System.out.println("Tower says: JetPlane#" + this.name + "(" + this.id + ") registered to weather tower.");
 	}
 }

@@ -1,4 +1,4 @@
-package com.gkehren.avaj.Aircraft;
+package com.gkehren.avaj;
 
 import com.gkehren.avaj.Coordinates;
 import com.gkehren.avaj.Simulator.SimulatorException;

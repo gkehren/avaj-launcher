@@ -1,15 +1,20 @@
 package com.gkehren.avaj;
 
+import java.util.List;
+import java.util.ArrayList;
+
+import com.gkehren.avaj.Flyable;
+
 public class Tower {
 
 	private List<Flyable> observers = new ArrayList<Flyable>();
 
 	public void register(Flyable flyable) {
-		oberservers.add(flyable);
+		observers.add(flyable);
 	}
 
 	public void unregister(Flyable flyable) {
-		oberservers.remove(flyable);
+		observers.remove(flyable);
 	}
 
 	protected void conditionsChanged() {
