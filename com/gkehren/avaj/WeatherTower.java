@@ -3,8 +3,10 @@ package com.gkehren.avaj;
 public class WeatherTower extends Tower {
 
 	public String getWeather(Coordinates coordinates) {
-		return "SUN";
+		return WeatherProvider.getProvider().getCurrentWeather(coordinates);
 	}
 
-	public void changeWeather() {}
+	public void changeWeather() {
+		this.conditionsChanged();
+	}
 }
