@@ -14,14 +14,15 @@ public class AircraftFactory {
 		}
 
 		Coordinates coordinates = new Coordinates(longitude, latitude, height);
-		if (type.toLowerCase().equals("jetplane")) {
-			return new JetPlane(name, coordinates);
-		} else if (type.toLowerCase().equals("helicopter")) {
-			return new Helicopter(name, coordinates);
-		} else if (type.toLowerCase().equals("baloon")) {
-			return new Baloon(name, coordinates);
-		} else {
-			throw new SimulatorException("Error: Unknown aircraft type: " + type);
+		switch (type.toLowerCase()) {
+			case "baloon":
+				return new Baloon(name, coordinates);
+			case "jetplane":
+				return new JetPlane(name, coordinates);
+			case "helicopter":
+				return new Helicopter(name, coordinates);
+			default:
+				throw new SimulatorException("Error: Unknown aircraft type: " + type);
 		}
 	}
 }
