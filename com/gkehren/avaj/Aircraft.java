@@ -1,8 +1,5 @@
 package com.gkehren.avaj;
 
-import com.gkehren.avaj.WeatherTower;
-import com.gkehren.avaj.Coordinates;
-
 public class Aircraft {
 
 	protected long id;

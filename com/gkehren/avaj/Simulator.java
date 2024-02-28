@@ -4,28 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.gkehren.avaj.AircraftFactory;
-
 public class Simulator {
-
-	public static class SimulatorException extends Exception {
-		private static final long serialVersionUID = 1L;
-
-		public SimulatorException() {
-			super();
-		}
-
-		public SimulatorException(String message) {
-			super(message);
-		}
-
-		public SimulatorException(Throwable cause) {
-			super(cause);
-		}
-	}
 
 	private static int simulationSteps;
 	private static WeatherTower weatherTower;
+	private static FileWriter writer = FileWriter.getInstance();
 
 	private Simulator() {}
 
@@ -58,7 +41,7 @@ public class Simulator {
 
 	private void runSimulation() {
 		for (int i = 0; i < simulationSteps; i++) {
-			System.out.println("\n\t --- Simulation step " + (i + 1) + " of " + simulationSteps + " ---");
+			//writer.writeLine("\n\t --- Simulation step " + (i + 1) + " of " + simulationSteps + " ---");
 			weatherTower.changeWeather();
 		}
 	}
@@ -80,7 +63,8 @@ public class Simulator {
 			System.err.println("Error: " + e.getMessage());
 			System.exit(1);
 		} finally {
-			System.out.println("\n\t --- Simulation ended. ---");
+			writer.writeLine("\n\t --- Simulation ended. ---");
+			writer.close();
 		}
 	}
 }

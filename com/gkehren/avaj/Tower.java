@@ -3,8 +3,6 @@ package com.gkehren.avaj;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.gkehren.avaj.Flyable;
-
 public class Tower {
 
 	private List<Flyable> observers = new ArrayList<Flyable>();
